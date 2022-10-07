@@ -12,7 +12,6 @@ class Clock:
     
     def get_time(self):
         return f'{self.__current_datetime}'
-
     
     def start_timer(self):
         self._timer.start()
@@ -22,7 +21,11 @@ class Clock:
         self._timer.stop()
         print("Timer stopped!")
 
+    def set_alarm(self):
+        pass
 
+    def get_alarmt(self):
+        pass
 
 
 
