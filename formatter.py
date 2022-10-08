@@ -11,3 +11,8 @@ class Date(NamedTuple):
 def tformat(datetime: dt) -> Date:
     return Date(datetime.year, datetime.month, datetime.day,\
            datetime.hour, datetime.minute)
+
+def strformat(d: dt) -> str:
+    return "{}-{}-{} {}:{}:{}".format(
+        d.year, d.month, d.day, d.hour, d.minute, d.second
+    )
