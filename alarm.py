@@ -1,11 +1,12 @@
 from datetime import datetime as dt
 
 class Alarm():
-    __current_alarm = None
+    def __init__(self, datet: dt = None):
+        self.__current_alarm = datet
 
-    def set_alarm(datetime: dt):
-        pass
+    def set_alarm(self, datetime: dt):
+        self.__current_alarm = datetime
 
-    def get_alarm() -> dt:
-        pass
+    def get_alarm(self) -> dt:
+        return self.__current_alarm
     
