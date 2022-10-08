@@ -1,5 +1,6 @@
 from timer import Timer
 from alarm import Alarm, dt
+from formatter import tformat
 
 class Clock:
 
@@ -10,8 +11,8 @@ class Clock:
         self.__current_datetime = dt.now()
         self.__time_alarm = None
     
-    def get_time(self):
-        return f'{self.__current_datetime}'
+    def get_time(self) -> dt:
+        return self.__current_datetime
     
     def start_timer(self):
         self._timer.start()
@@ -21,11 +22,15 @@ class Clock:
         self._timer.stop()
         print("Timer stopped!")
 
-    def set_alarm(self):
+    def set_alarmt(self):
         pass
 
     def get_alarmt(self):
         pass
+
+    def mainloop(self):
+        pass
+
 
 
 
