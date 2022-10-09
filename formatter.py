@@ -10,7 +10,7 @@ class Date(NamedTuple):
 
 def tformat(datetime: dt) -> Date:
     return Date(datetime.year, datetime.month, datetime.day,\
-           datetime.hour, datetime.minute)
+           datetime.hour, datetime.minute, datetime.second)
 
 def strformat(d: dt) -> str:
     return "{}-{}-{} {}:{}:{}".format(

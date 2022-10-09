@@ -32,6 +32,19 @@ class Clock:
     def get_alarmt(self) -> dt:
         return self._alarm.get_alarm()
 
+
+    def is_alarm(self) -> bool:
+        """Check if time for call alarm"""
+        if self.get_alarmt() is not None:
+            return self.compare(self.get_time(), self.get_alarmt())
+        return False
+
+    @staticmethod
+    def compare(dt1: dt, dt2: dt) -> bool:
+        if dt1.year == dt2.year and dt1.month == dt2.month and \
+                dt1.day == dt2.day and dt1.hour == dt2.hour and dt1.minute == dt2.minute:
+            return True
+        return False
     @staticmethod
     def clear():
         system('clear')
@@ -42,6 +55,9 @@ class Clock:
             print("Current time: {}".format(
                 strformat(self.get_time()))
             )
+            if self.is_alarm():
+                print("BUZZZZ!!! Time for wake UP! Time: {}".format(strformat(self.get_time())))
+
             sleep(1)
             self.set_time(dt.now())
             self.clear()
